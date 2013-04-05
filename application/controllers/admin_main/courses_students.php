@@ -4,8 +4,12 @@ class courses_students extends CI_Controller {
 	 	// defult constructor 
 	public function __construct()
     {
-            parent::__construct();
-            // Your own constructor code	
+        parent::__construct();
+        
+		//Check User Session
+		$this->admin_check->is_logged_in($this->session->userdata);
+		
+		// Your own constructor code	
 		$this->load->model('admin/cource_students_model');
     }
 	

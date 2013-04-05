@@ -8,7 +8,8 @@ Feel free to use and modify but please keep this copyright intact.
 #################################################################*/
 
 //Theme Variables - edit these to match your theme
-var imagesPath = "../img/";
+var imagesPath = "http://localhost/EnglishBooking/theme/admin-images/img/";
+
 var selectRightWidthSimple = 19;
 var selectRightWidthScroll = 2;
 var selectMaxHeight = 200;
@@ -49,6 +50,7 @@ function NFDo(what) {
 	}}
 }
 function NFFix() {
+	
 	NFDo('stop');
 	NFDo('start');
 }
@@ -112,7 +114,9 @@ function niceform(nf) {
 function inputText(el) { //extent Text inputs
 	el.oldClassName = el.className;
 	el.left = document.createElement('img');
+	
 	el.left.src = imagesPath + "0.png";
+//	alert(el.left.src);
 	el.left.className = "NFTextLeft";
 	el.right = document.createElement('img');
 	el.right.src = imagesPath + "0.png";

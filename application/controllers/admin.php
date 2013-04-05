@@ -30,29 +30,29 @@ class Admin extends CI_Controller {
 		/*
 			Mian admin index page check it if user login already move to home page of admin otherwise move to Login page 
 		*/
-                        
-			if($this->session->userdata('admin_id')!=''){
-                            $per_page = 15;
-                            $counti = $per_page + $offset;
-                            $offset1 = $offset.",".$counti;
-                            $data['list'] = $this->login->getnotifaction($offset1);
-                            $data['total'] = $this->login->getnotifaction_num();
-                            $config['base_url'] = base_url().'user/Student_dashboard/view_all_notifaction';
-                            $config['total_rows'] = $data['total'];
-                            $config['per_page'] = 15;
-                            $config['num_links']=9;
-                            $config['uri_segment'] =4;
-                            $this->pagination->initialize($config); 
-				  $this->load->view('admin/header');
-				  $this->load->view('admin/left');
-				  $this->load->view('admin/home',$data);
-				  $this->load->view('admin/footer');
-			} else {
-					$this->load->view('admin/header');
-				   	$this->load->view('admin/login');
-		 		  
-				 
-			}
+		//  echo '<pre>';print_r($this->session->userdata);exit;
+		if($this->session->userdata('admin_id')!=''){
+						$per_page = 15;
+						$counti = $per_page + $offset;
+						$offset1 = $offset.",".$counti;
+						$data['list'] = $this->login->getnotifaction($offset1);
+						$data['total'] = $this->login->getnotifaction_num();
+						$config['base_url'] = base_url().'user/Student_dashboard/view_all_notifaction';
+						$config['total_rows'] = $data['total'];
+						$config['per_page'] = 15;
+						$config['num_links']=9;
+						$config['uri_segment'] =4;
+						$this->pagination->initialize($config); 
+			  $this->load->view('admin/header');
+			  $this->load->view('admin/left');
+			  $this->load->view('admin/home',$data);
+			  $this->load->view('admin/footer');
+		} else {
+				$this->load->view('admin/header');
+				$this->load->view('admin/login');
+			  
+			 
+		}
 	}
 	public function login(){
 		if($this->session->userdata('admin_id')!=''){

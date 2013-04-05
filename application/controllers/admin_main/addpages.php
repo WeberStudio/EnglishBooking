@@ -19,8 +19,12 @@ class addpages extends CI_Controller {
 	public function __construct()
     {
             parent::__construct();
-            // Your own constructor code
-			$this->load->model('admin/addnewpages');	
+            
+			//Check User Session
+			$this->admin_check->is_logged_in($this->session->userdata);				
+			
+			// Your own constructor code
+			$this->load->model('admin/addnewpages');
 			
     }
 	
