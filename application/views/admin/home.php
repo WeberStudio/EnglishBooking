@@ -3,14 +3,27 @@
         
     <h2>Welcome To Admin Dashboard</h2> 
                     
-    <div><?php echo $total;?></div>              
-    <div>
-            <?php 
-                foreach ($list as $row) {
+    <a class="bt_blue" style="margin-right:335px !important">
+        <span class="bt_blue_lft"></span><strong><?php echo $total;?></strong><span class="bt_blue_r"></span>
+    </a>  
+    
+    
+    <table id="rounded-corner" style="width: 290px !important; margin-top:45px">
+    <tbody>
+      <?php 
+      foreach ($list as $row) {
             ?>
-        <a href="<?php echo base_url();?>admin/getnotifaction/<?php echo $row->id;?>" ><?php echo $row->text;?></a><br/> 
-        <?php }?>
-    </div>
+        <tr>
+            <td>&nbsp;</td>
+            <td> <a href="<?php echo base_url();?>admin/getnotifaction/<?php echo $row->id;?>" ><?php echo $row->text;?></a></td>
+        </tr>
+        
+         <?php } ?>  
+        
+    </tbody>
+</table>
+    
+    
     <div><?php echo $this->pagination->create_links();?></div>
      
      </div><!-- end of right content-->

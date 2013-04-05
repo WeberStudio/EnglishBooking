@@ -38,8 +38,8 @@ class login extends CI_Model {
 		/*Log out function destroy the seesion of login admin user*/
 		$this->session->sess_destroy();
 	}
-        public function getnotifaction(){
-             $sql = $this->db->query("SELECT * FROM adminnotifaction WHERE status = 1 ".$offset1."");
+        public function getnotifaction($offset1){
+             $sql = $this->db->query("SELECT * FROM adminnotifaction WHERE status = 1  LIMIT ".$offset1."");
 	     return   $sql->result();
         }
          public function getnotifaction_num(){
