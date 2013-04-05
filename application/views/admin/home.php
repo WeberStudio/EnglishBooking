@@ -3,12 +3,12 @@
         
     <h2>Welcome To Admin Dashboard</h2> 
                     
-    <a class="bt_blue" style="margin-right:335px !important">
+    <a class="bt_blue">
         <span class="bt_blue_lft"></span><strong><?php echo $total;?></strong><span class="bt_blue_r"></span>
     </a>  
     
     
-    <table id="rounded-corner" style="width: 290px !important; margin-top:45px">
+    <table id="rounded-corner">
     <tbody>
       <?php 
       foreach ($list as $row) {
