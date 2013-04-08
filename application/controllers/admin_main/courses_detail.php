@@ -5,7 +5,11 @@ class Courses_detail extends CI_Controller {
 	public function __construct()
     {
             parent::__construct();
-            // Your own constructor code	
+        
+		//Check User Session
+		$this->admin_check->is_logged_in($this->session->userdata);
+		
+		// Your own constructor code	
 		$this->load->model('admin/cource_model');
 		/* check whether login or not */
     }
